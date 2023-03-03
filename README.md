@@ -1,4 +1,4 @@
-- Live Site URL: [here](https://kevinburle.github.io/expenses-chart-component/)
+- Live Site URL: [here](https://kevinburle.github.io/interactive-card-details-vanilla-js/)
 
 # Frontend Mentor - Interactive card details form solution
 
@@ -28,7 +28,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshots/desktop.jpg)
+![](./screenshots/mobile.jpg)
+![](./screenshots/mobile-active.jpg)
+![](./screenshots/mobile-completed.jpg)
 
 ### Built with
 
