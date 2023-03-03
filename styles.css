@@ -1,0 +1,427 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* fonts */
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+:root {
+  /* primary colors */
+  --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --red-error: hsl(0, 100%, 66%);
+
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+
+  /* neutral */
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --hover-dark-violet: hsla(278, 68%, 11%, 0.829);
+  --very-dark-violet: hsl(278, 68%, 11%);
+
+  /* rest of the colors */
+  --black: #222;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* fonts  */
+  --grotesk: "Space Grotesk", sans-serif;
+  --default-fs: 1.125rem;
+
+  /* rest of the vars */
+  --backgroundColor: var(--white);
+  --textColor: var(--grey-900);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1170px;
+  --fixed-width: 600px;
+
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  background: var(--backgroundColor);
+  color: var(--textColor);
+  font-size: var(--default-fs);
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/*
+=========
+Generals
+=========
+*/
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/*
+=========
+Banner
+=========
+*/
+
+.img-container {
+  height: 240px;
+}
+
+.mobile-banner {
+  height: 100%;
+}
+
+.desktop-banner {
+  display: none;
+}
+
+/*
+=========
+Card
+=========
+*/
+
+.card-container {
+  width: 337.5px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.card-container .card-back,
+.card-container .card-front {
+  width: 85%;
+  position: absolute;
+}
+
+.card-container .card-back {
+  top: 0;
+  right: 0;
+}
+
+.card-container .card-front {
+  top: 11px;
+  left: 0;
+  transform: translateY(50%);
+}
+
+.card-back-img,
+.card-front-img {
+  display: block;
+  width: 100%;
+}
+
+.card-cvc {
+  position: absolute;
+  top: 49%;
+  right: 25px;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  font-family: var(--grotesk);
+}
+
+.card-logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 4rem;
+}
+
+.card-number {
+  text-align: left;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  font-family: var(--grotesk);
+}
+
+.card-info {
+  position: absolute;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-name,
+.card-expiration {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  font-family: var(--grotesk);
+}
+
+/*
+=========
+Form
+=========
+*/
+
+.form-container {
+  min-height: calc(100vh - 240px - 15vw);
+  width: 90vw;
+  margin: 15vw auto 0 auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.form {
+  width: 100%;
+  font-family: var(--grotesk);
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--very-dark-violet);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-family: var(--grotesk);
+  cursor: pointer;
+  font-size: 1.125rem;
+  outline: none;
+  border: 1px solid var(--light-grayish-violet);
+}
+
+.form-input:focus {
+  border-color: hsl(249, 99%, 64%);
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--light-grayish-violet);
+  font-size: var(--default-fs);
+  letter-spacing: 0.5px;
+}
+
+/* displaying form error with JS*/
+.form-input-container .error-text {
+  display: none;
+  color: var(--red-error);
+  font-size: 0.75rem;
+}
+
+.form-input-container.show-error .error-text,
+.input-flex.show-error + .error-text {
+  display: inline;
+}
+
+.form-input.error {
+  border-color: var(--red-error);
+}
+/* end of displaying error */
+
+.btn {
+  width: 100%;
+  font-family: inherit;
+  text-transform: capitalize;
+  background: var(--very-dark-violet);
+  color: var(--light-grayish-violet);
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  border: transparent;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--hover-dark-violet);
+}
+
+.form-flex-container,
+.input-flex {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.form-two-column,
+.form-single-column {
+  width: 50%;
+}
+
+/*
+=========
+Complete Page
+=========
+*/
+
+/* status completed */
+
+.form-container.completed .form {
+  display: none;
+}
+
+.form-container.completed .confirmation-page {
+  display: block;
+}
+
+/* end of completed status */
+
+.confirmation-page {
+  display: none;
+  text-align: center;
+  width: 100%;
+  font-family: var(--grotesk);
+}
+
+.confirmation-page .complete {
+  margin-bottom: 2rem;
+}
+
+.confirmation-page h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--very-dark-violet);
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.confirmation-page p {
+  color: var(--dark-grayish-violet);
+}
+
+.confirmation-page .btn {
+  margin-top: 3rem;
+}
+
+/*
+=========
+> 1024px Desktop Layout
+=========
+*/
+
+@media screen and (min-width: 1024px) {
+  .mobile-banner {
+    display: none;
+  }
+  .desktop-banner {
+    display: block;
+    height: 100vh;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+  }
+
+  .img-container {
+    width: 30vw;
+    height: 100%;
+  }
+
+  .form-container {
+    width: calc(100vw - 30vw);
+    margin: 0;
+  }
+
+  .form {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .form,
+  .confirmation-page {
+    width: 50%;
+    max-width: 35rem;
+    margin-left: 5rem;
+  }
+
+  /* card */
+
+  .card-container {
+    height: calc(372.68px + 2rem);
+    width: 25rem;
+    position: absolute;
+    top: 50vh;
+    left: 30vw;
+    transform: translate(calc(-15% - ((25rem - 15%) / 2)), -50%);
+  }
+
+  .card-container .card-back,
+  .card-container .card-front {
+    width: 85%;
+    position: absolute;
+    height: auto;
+  }
+
+  .card-front-img,
+  .card-back-img {
+    height: 100%;
+  }
+
+  .card-container .card-back {
+    top: initial;
+    right: 0;
+    bottom: 0;
+  }
+
+  .card-container .card-front {
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+  }
+}

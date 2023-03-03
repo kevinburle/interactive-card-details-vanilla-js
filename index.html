@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- img container -->
+      <section class="img-container">
+        <img
+          src="./images/bg-main-mobile.png"
+          class="img mobile-banner"
+          alt="background"
+        />
+        <img
+          src="./images/bg-main-desktop.png"
+          class="img desktop-banner"
+          alt="background"
+        />
+      </section>
+      <!-- end of image container -->
+
+      <!-- card container -->
+      <section class="card-container">
+        <figure class="card-back">
+          <img
+            src="./images/bg-card-back.png"
+            class="card-back-img"
+            alt="card-back"
+          />
+          <span class="card-cvc">000</span>
+        </figure>
+        <figure class="card-front">
+          <img
+            src="./images/bg-card-front.png"
+            class="card-front-img"
+            alt="card-front"
+          />
+          <img src="./images/card-logo.svg" alt="card-logo" class="card-logo" />
+          <span class="card-number">0000 0000 0000 0000</span>
+          <div class="card-info">
+            <span class="card-name">jane appleseed</span>
+            <span class="card-expiration"
+              ><span class="month">00</span>/<span class="year">00</span
+            ></span>
+          </div>
+        </figure>
+      </section>
+      <!-- end of card container -->
+
+      <!-- form container -->
+      <section class="form-container">
+        <!-- form -->
+        <form class="form">
+          <!-- name -->
+          <div class="form-row form-input-container">
+            <label for="name" class="form-label">cardholder name</label>
+            <input
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              class="form-input"
+              name="name"
+              maxlength="20"
+            />
+            <small class="error-text">Can't be blank</small>
+          </div>
+          <!-- end of name -->
+          <!-- number -->
+          <div class="form-row form-input-container">
+            <label for="number" class="form-label">card number</label>
+            <input
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              class="form-input"
+              name="number"
+              maxlength="19"
+            />
+            <small class="error-text">Can't be blank</small>
+          </div>
+          <!-- end of number -->
+          <!-- column container -->
+          <div class="form-flex-container">
+            <!-- exp date container -->
+            <div class="form-two-column form-input-container">
+              <label for="expiration" class="form-label"
+                >exp. date (MM/YY)</label
+              >
+              <!-- input flex -->
+              <div class="input-flex">
+                <input
+                  type="text"
+                  placeholder="MM"
+                  class="form-input"
+                  name="expiration-month"
+                  maxlength="2"
+                />
+                <input
+                  type="text"
+                  placeholder="YY"
+                  class="form-input"
+                  name="expiration-year"
+                  maxlength="2"
+                />
+              </div>
+              <small class="error-text">Can't be blank</small>
+            </div>
+            <!-- cvc container -->
+            <div class="form-single-column form-input-container">
+              <label for="cvc" class="form-label">cvc</label>
+              <input
+                type="text"
+                placeholder="e.g. 123"
+                class="form-input"
+                name="cvc"
+                maxlength="4"
+                minlength="3"
+              />
+              <small class="error-text">Can't be blank</small>
+            </div>
+          </div>
+          <!-- end of colmun container -->
+          <!-- submit button -->
+          <button type="submit" class="btn">confirm</button>
+        </form>
+        <!-- end of form -->
+        <!-- confirmation page -->
+        <article class="confirmation-page">
+          <figure class="complete">
+            <img src="./images/icon-complete.svg" alt="complete-logo" />
+          </figure>
+          <h2>thank you!</h2>
+          <p>we've added your card details</p>
+          <button type="button" class="btn">continue</button>
+        </article>
+        <!-- end of confirmation page -->
+      </section>
+      <!-- end of form container -->
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
